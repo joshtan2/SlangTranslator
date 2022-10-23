@@ -1,0 +1,34 @@
+// {
+//   "name": "Boomer Begone",
+//   "version": "1.0.0",
+//   "description": "This is an extension to search up slang words",
+//   "manifest_version": 3,
+//   "author": "Josh",
+//   "permissions": ["contextMenus"],
+//   "background": { "service_worker": "extension.js" },
+//   "aaction": {
+//     "default_popup": "index.html",
+//     "default_title": "Boomer Begone"
+//   }
+// }
+{
+  "manifest_version": 2,
+
+  "name": "Slang Manager",
+  "description": "This extension translates slang.",
+  "version": "1.0",
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["extension.js"]
+  },
+
+  "permissions": ["storage", "notifications", "contextMenus"]
+}
